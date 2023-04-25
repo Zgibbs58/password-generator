@@ -1,5 +1,10 @@
 function generatePassword(length) {
-
+  var charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+";
+  var password = ""
+  for (let i = 0; i < length; i++) {
+    const randCharset = charset.;
+    
+  }
 }
 
 
