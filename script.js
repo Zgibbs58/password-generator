@@ -8,15 +8,21 @@ function generatePassword(length) {
       window.alert("Please use a length between 8 and 128!");
       passwordLength = prompt("Enter the length of password, with at least 8 characters and no more than 128.")
     }
-    
-    if (confirm("Press a button!") == true) {
-      console.log(true)
-    } else {
-      console.log(false)
+
+    var charset = ""
+
+    if (confirm("Include lower case?") === true) {
+      charset = "abcdefghijklmnopqrstuvwxyz"
     }
 
+    if (confirm("Include upper case?") === true) {
+      charset += "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    }
 
-var charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+";
+    
+    
+    // abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+
+// var charset = "";
         var password = ""
         for (let i = 0; i < passwordLength; i++) {
         var randCharset = charset.charAt(Math.floor(Math.random() * charset.length));
