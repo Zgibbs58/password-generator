@@ -2,18 +2,22 @@
 var generateBtn = document.querySelector("#generate");
 
 function generatePassword(length) {
-  //all code goes here look at alerts, prompts 
-  let characters = prompt("How many characters?")
-  var charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+";
-  var password = ""
-  for (let i = 0; i < characters; i++) {
-    var randCharset = charset.charAt(Math.floor(Math.random() * charset.length));
-    password += randCharset
+  //all code goes here look at alerts, prompts, confirms 
+  let passwordLength = prompt("Enter the length of password, with at least 8 characters and no more than 128.")
+    while (passwordLength <= 8 || passwordLength >= 128) {
+      window.alert("Please use a length between 8 and 128!");
+      passwordLength = prompt("Enter the length of password, with at least 8 characters and no more than 128.")
+    }
+var charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+";
+        var password = ""
+        for (let i = 0; i < passwordLength; i++) {
+        var randCharset = charset.charAt(Math.floor(Math.random() * charset.length));
+        password += randCharset;
+    }
+    return password;
   }
-  return password;
-}
 
-console.log(generatePassword(10));
+console.log(generatePassword());
 
 // Write password to the #password input
 function writePassword() {
