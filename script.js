@@ -4,7 +4,7 @@ var generateBtn = document.querySelector("#generate");
 function generatePassword(length) {
   //all code goes here look at alerts, prompts, confirms 
   var passwordLength = prompt("Enter the length of password, with at least 8 characters and no more than 128.")
-    while (passwordLength < 8 || passwordLength > 128) {
+    while ( isNaN(passwordLength) || passwordLength < 8 || passwordLength > 128) {
       window.alert("Please use a length between 8 and 128!");
       passwordLength = prompt("Enter the length of password, with at least 8 characters and no more than 128.")
     }
