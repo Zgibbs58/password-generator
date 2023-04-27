@@ -12,11 +12,19 @@ function generatePassword(length) {
     var charset = ""
 
     if (confirm("Include lower case?") === true) {
-      charset = "abcdefghijklmnopqrstuvwxyz"
+      charset += "abcdefghijklmnopqrstuvwxyz"
     }
 
     if (confirm("Include upper case?") === true) {
       charset += "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    }
+
+    if (confirm("Include numbers?") === true) {
+      charset += "0123456789"
+    }
+
+    if (confirm("Include special characters?") === true) {
+      charset += "!@#$%^&*()_+"
     }
 
     
