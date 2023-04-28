@@ -31,21 +31,33 @@ function generatePassword(length) {
       charset += "!@#$%^&*()_+"
     }
 
+    if (charset === "") {
+      alert("Please selece at least one character set.")
+    }
 
-    // abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+
-// var charset = "";
-    if (charset !== "") {
-      var passwordGenerated = ""
+    var passwordGenerated = ""
       for (let i = 0; i < passwordLength; i++) {
       var randCharset = charset.charAt(Math.floor(Math.random() * charset.length));
       passwordGenerated += randCharset;
   }
   return passwordGenerated;
-    } else {
-      alert("Please selece at least one character set.")
-      passwordGenerated = "Your Secure Password"
-      return passwordGenerated;
-    }
+    
+
+
+    // abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+
+// var charset = "";
+  //   if (charset !== "") {
+  //     var passwordGenerated = ""
+  //     for (let i = 0; i < passwordLength; i++) {
+  //     var randCharset = charset.charAt(Math.floor(Math.random() * charset.length));
+  //     passwordGenerated += randCharset;
+  // }
+  // return passwordGenerated;
+  //   } else {
+  //     alert("Please selece at least one character set.")
+  //     passwordGenerated = "Your Secure Password"
+  //     return passwordGenerated;
+  //   }
        
     
   }
