@@ -28,9 +28,9 @@ function generatePassword(length) {
     }
 
     if (confirm("Include special characters?") === true) {
-      charset += "!@#$%^&*()_+"
+      charset += "!#$%&'()*+,-.:;<=>?@[]^_`{|}~"
     }
-
+    // used to validate at least one character set was selected to continue
     if (charset === "") {
       alert("Please selece at least one character set.")
     }
