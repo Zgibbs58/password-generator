@@ -10,7 +10,10 @@ function generatePassword(length) {
       passwordLength = prompt("Enter the length of password, with at least 8 characters and no more than 128.")
     }
 
+    // var splice
+
     var charset = ""
+    
 
     if (confirm("Include lower case?") === true) {
       charset += "abcdefghijklmnopqrstuvwxyz"
@@ -28,14 +31,23 @@ function generatePassword(length) {
       charset += "!@#$%^&*()_+"
     }
 
+
     // abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+
 // var charset = "";
-        var passwordGenerated = ""
-        for (let i = 0; i < passwordLength; i++) {
-        var randCharset = charset.charAt(Math.floor(Math.random() * charset.length));
-        passwordGenerated += randCharset;
+    if (charset !== "") {
+      var passwordGenerated = ""
+      for (let i = 0; i < passwordLength; i++) {
+      var randCharset = charset.charAt(Math.floor(Math.random() * charset.length));
+      passwordGenerated += randCharset;
+  }
+  return passwordGenerated;
+    } else {
+      alert("Please selece at least one character set.")
+      passwordGenerated = "Your Secure Password"
+      return passwordGenerated;
     }
-    return passwordGenerated;
+       
+    
   }
 
 // Write password to the #password input
@@ -56,3 +68,4 @@ generateBtn.addEventListener("click", writePassword);
 
 // Hint strings are iterable
 // look up prompts for javascript
+
