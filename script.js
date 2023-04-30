@@ -14,25 +14,26 @@ function generatePassword() {
 
   var charset = "";
 
-  if (confirm("Include lower case?") === true) {
+  if (confirm("Include lower case?")) {
     charset += "abcdefghijklmnopqrstuvwxyz";
   }
 
-  if (confirm("Include upper case?") === true) {
+  if (confirm("Include upper case?")) {
     charset += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   }
 
-  if (confirm("Include numbers?") === true) {
+  if (confirm("Include numbers?")) {
     charset += "0123456789";
   }
 
-  if (confirm("Include special characters?") === true) {
+  if (confirm("Include special characters?")) {
     charset += "!#$%&'()*+,-.:;<=>?@[]^_`{|}~";
   }
   // used to validate at least one character set was selected to continue
   if (charset === "") {
     alert("Please select at least one character set.");
-    // if this condition is met and the charset is empty, we STOP our app here. we no longer run the rest of the generatePassword() function
+    // if this condition is met and the charset is empty, we STOP our app here. we no longer run the rest of the generatePassword() function.
+    // return statement stops the code from running past it by returning the generatePassword function.
     return generatePassword();
   }
 
