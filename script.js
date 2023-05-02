@@ -13,21 +13,18 @@ function generatePassword() {
       "Enter the length of password, with at least 8 characters and no more than 128."
     );
   }
-
+  // empty charset string is added to as the the user hits okay on confirms.
   var charset = "";
 
   if (confirm("Include lower case?")) {
     charset += "abcdefghijklmnopqrstuvwxyz";
   }
-
   if (confirm("Include upper case?")) {
     charset += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   }
-
   if (confirm("Include numbers?")) {
     charset += "0123456789";
   }
-
   if (confirm("Include special characters?")) {
     charset += "!#$%&'()*+,-.:;<=>?@[]^_`{|}~";
   }
@@ -39,6 +36,7 @@ function generatePassword() {
     return generatePassword();
   }
 
+  // PasswordGenerated string is added to one character at a time throught the loop for as many times as passwordLength.
   var passwordGenerated = "";
   for (let i = 0; i < passwordLength; i++) {
     // two ways to write this out
